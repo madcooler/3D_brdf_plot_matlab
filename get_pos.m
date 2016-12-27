@@ -14,8 +14,4 @@ pos_x = sin(theta) * cos(phi) * intensity;
 pos_y = sin(theta) * sin(phi) * intensity;
 pos_z = cos(theta) * intensity;
 
-x = pos_x;
-y=pos_y;
-z=pos_z;
-
 end

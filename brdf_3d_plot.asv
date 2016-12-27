@@ -8,8 +8,8 @@ load('diff_mag.txt')
 x = diff_mag(:,1);
 y = diff_mag(:,2);
 
-ti = diff_mag(:,15);
-tip = diff_mag(:,14);
+ti = diff_mag(:,);
+%tip = diff_mag(:,14);
 
 size = 1;
 for size = 1:length(x);
@@ -22,7 +22,7 @@ x = reshape(x,size,st);
 y = reshape(y,size,st);
 
 ti = reshape(ti,size,st);
-tip = reshape(tip,size,st);
+%tip = reshape(tip,size,st);
 
     
 width = length(x(:,1));
@@ -32,19 +32,10 @@ imagesize = 512;
 
 for i = 1:width
     for j = 1: height
-       [px(i,j),py(i,j),pz(i,j)] = get_pos(x(i,j),y(i,j),ti(i,j),imagesize);
+       [px(i,j),py(i,j),pz(i,j)] = get_pos_2(x(i,j),y(i,j),ti(i,j));
     end
 end
 
-for i = 1:width
-    for j = 1: height
-       [ppx(i,j),ppy(i,j),ppz(i,j)] = get_pos(x(i,j),y(i,j),tip(i,j),imagesize);
-    end
-end
-
-mesh(px,py,pz);
-hold on;
-surf(ppx,ppy,ppz);
 
 
 
